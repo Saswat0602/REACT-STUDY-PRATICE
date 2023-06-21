@@ -27,5 +27,5 @@ React has two types of componenet
 
 -->there can only one parent in JSX thats why we use react.fragment
 
-
+porops --> passing some properties to functional component
 
