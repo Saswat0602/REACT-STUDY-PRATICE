@@ -1,0 +1,31 @@
+
+// HMR = Hot Module Reloading (Parcel)
+// File Watcher Algorithm used here  written in c++
+//node module use transitive dependencies
+
+
+
+
+//study diff Algorithm
+
+//JSX  ========> React.createElement ===>html(dom)
+
+
+React has two types of componenet
+
+1.functional component => nothing but a normal function of js
+
+2.class based component ==> old model
+
+=> Name of component start with capital letters
+
+--//composing component use one component inside another component
+
+       video 4
+------------------------
+
+
+-->there can only one parent in JSX thats why we use react.fragment
+
+
+
