@@ -29,3 +29,21 @@ React has two types of componenet
 
 porops --> passing some properties to functional component
 
+-->React has one way binding
+
+
+
+
+
+// Body Component for body section: It contain all restaurant cards
+// We are mapping restaurantList array and passing data to RestaurantCard component as props with unique key as index
+
+
+useState used to declare local variable
+
+useState()==>//to create state variables
+
+useState --> returns a array
+
+Why we need state variable ?
+-->bcz react cant track all variable and does not chnage normal varibale thats why we use state variable.

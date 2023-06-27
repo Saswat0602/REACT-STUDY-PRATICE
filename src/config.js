@@ -1,33 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+export const IMG_CON_URL =
+  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
 
-const Ttitle = () => (
-  <a href="/">
-    <img
-      className="logo"
-      src="https://lh3.googleusercontent.com/EbPS9tYwL3H8NkiYJPJbuRHmeIFVUYJs99IdfFT7ea6ZF9sw1Vhw9tiCFVCXqornHGKZyP8sy89up4G-yKqGzoLgPx8"
-      alt="logo"
-    />
-  </a>
-);
-
-const Header = () => {
-  return (
-    <div className="header">
-      <Ttitle />
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const restaurantList = [
+  
+export const restaurantList = [
   {
     type: "restaurant",
     data: {
@@ -1844,77 +1819,3 @@ const restaurantList = [
     subtype: "basic",
   },
 ];
-
-// Restaurant card component: Image, name, cuisine
-const RestaurantCard = ({
-  cloudinaryImageId,
-  name,
-  cuisines,
-  area,
-  lastMileTravelString,
-  costForTwoString,
-  avgRating,
-}) => {
-  return (
-    <div className="card">
-      <img
-        src={
-          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
-          cloudinaryImageId
-        }
-      />
-      <h2>{name}</h2>
-      <h4>{cuisines.join(", ")}</h4>
-      <h4>{area}</h4>
-      <span>
-        <h4>
-          <i class="fa-solid fa-star"></i>
-          {avgRating}
-        </h4>
-        <h4>{lastMileTravelString}</h4>
-        <h4>{costForTwoString}</h4>
-      </span>
-    </div>
-  );
-};
-
-// Body Component for body section: It contain all restaurant cards
-// We are mapping restaurantList array and passing data to RestaurantCard component as props with unique key as index
-
-const Body = () => {
-  return (
-    <div className="restaurant-list">
-      {restaurantList.map((restaurant) => {
-        return <RestaurantCard key={restaurant.data.id} {...restaurant.data} />;
-      })}
-    </div>
-  );
-};
-
-// Footer component for footer section
-const Footer = () => {
-  return (
-    <div className="footer">
-      Created By ME
-      <i class="fa-solid fa-heart"></i>
-      <i class="fa-solid fa-copyright"></i>2023
-      <strong>
-        Food<span>Villa</span>
-      </strong>
-    </div>
-  );
-};
-
-// AppLayout component to show: Header, Body, Footer
-const AppLayout = () => {
-  return (
-    <React.Fragment>
-      <Header />
-      <Body />
-      <Footer />
-    </React.Fragment>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
