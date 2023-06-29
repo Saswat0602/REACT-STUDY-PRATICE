@@ -45,5 +45,22 @@ useState()==>//to create state variables
 
 useState --> returns a array
 
+
 Why we need state variable ?
 -->bcz react cant track all variable and does not chnage normal varibale thats why we use state variable.
+
+
+
+// Body Component for body section: It contain all restaurant cards
+// We are mapping restaurantList array and passing JSON data to RestaurantCard component as props with unique key as index
+
+
+//empty dependencies array  ot will call only once
+  //de array[searchtext]-->once after render and every times searchtext changes.
+  //de array[restaurants]-->once after render and when clicked on search .
+
+
+-->1st render then api call(useeffect)
+
+--> never write useState inside if else,for-loop
+

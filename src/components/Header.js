@@ -1,4 +1,6 @@
- const Title = () => (
+import { useEffect, useState } from "react";
+
+const Title = () => (
   <a href="/">
     <img
       className="logo"
@@ -8,7 +10,11 @@
   </a>
 );
 
-  const Header = () => {
+const Header = () => {
+  const [isLoggedin, setIsLoggedin] = useState(true);
+useEffect(()=>{
+console.log("use effect");
+},[])
   return (
     <div className="header">
       <Title />
@@ -18,11 +24,25 @@
           <li>About</li>
           <li>Contact</li>
           <li>Cart</li>
+
+          <li>
+            {isLoggedin ? (
+              <button
+                className="logout-btn"
+                onClick={() => setIsLoggedin(false)}
+              >
+                Logout
+              </button>
+            ) : (
+              <button className="login-btn" onClick={() => setIsLoggedin(true)}>
+                Login
+              </button>
+            )}
+          </li>
         </ul>
       </div>
     </div>
   );
 };
-
 
 export default Header;
