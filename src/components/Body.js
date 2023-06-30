@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { swiggy_api_URL } from "../config";
+import { Link } from "react-router-dom";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
@@ -14,9 +15,9 @@ function filterData(searchText, restaurants) {
 const Body = () => {
   // useState: To create a state variable, searchText is local state variable
   const [searchText, setSearchText] = useState("");
-  const [allRestaurants, setAllRestaurants] = useState(restaurantList);
+  const [allRestaurants, setAllRestaurants] = useState();
   const [filteredRestaurants, setFilteredRestaurants] =
-    useState(restaurantList);
+    useState();
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
@@ -86,7 +87,9 @@ const Body = () => {
           {/* We are mapping restaurants array and passing JSON array data to RestaurantCard component as props with unique key as restaurant.data.id */}
           {filteredRestaurants.map((restaurant) => {
             return (
-              <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
+              <Link to={"/restaurant/" + restaurant.data.id}>
+                <RestaurantCard key={restaurant.data.id} {...restaurant.data} />
+              </Link>
             );
           })}
         </div>

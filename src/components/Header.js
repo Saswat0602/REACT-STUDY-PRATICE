@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Title = () => (
   <a href="/">
@@ -12,17 +13,26 @@ const Title = () => (
 
 const Header = () => {
   const [isLoggedin, setIsLoggedin] = useState(true);
-useEffect(()=>{
-console.log("use effect");
-},[])
+  useEffect(() => {
+    console.log("use effect");
+  }, []);
   return (
     <div className="header">
       <Title />
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link to={"/"}>Home</Link>
+          </li>
+
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+
+          <li>
+            <Link to={"/contact"}>Contact</Link>
+          </li>
+
           <li>Cart</li>
 
           <li>

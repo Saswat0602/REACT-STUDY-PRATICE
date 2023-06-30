@@ -64,3 +64,6 @@ Why we need state variable ?
 
 --> never write useState inside if else,for-loop
 
+--> there are two types of routing :
+   -- server-side
+   --client-side

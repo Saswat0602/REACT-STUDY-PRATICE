@@ -237,7 +237,7 @@
 
 /* footer CSS */
 .footer {
-  margin: 10px;
+  margin: auto;
   width: auto;
   text-align: center;
   background-color: var(--footer-bg-color);
